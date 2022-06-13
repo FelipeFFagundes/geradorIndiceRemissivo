@@ -12,19 +12,16 @@
 #define TAMANHO_PALAVRA 30
 #define MI 1000000
 
-void usage(char opcao){
-    switch (opcao)
-    {
-       case 'v':
-         printf("Gerador de Índice remissivo v1.0");
-       break;
-    
-       case 'h':
-         printf("Usage: make-s ./main");
-       break;
-        
-       default:
-          printf("Voce selecionou uma opcao diferente -v e -h");
+void usage(int status){
+    if (status != EXIT_SUCCESS) {
+      emit_try_help ();
+    } else {
+        printf (("\
+            Usage: %s [FILE]\n\
+        "), PROGRAM_NAME);
+        fputs (("\
+            Cria um arquivo csv que exibe a ocorrência das palavras contidas no arquivo .txt.\n\
+        "), stdout);
     }
 }
 
