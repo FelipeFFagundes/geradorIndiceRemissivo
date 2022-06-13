@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <getopt.h>
 
+/* O nome oficial deste programa */
 #define PROGRAM_NAME "IndiceRemissivo"
 
 #define AUTHORS proper_name ("Arthur Viegas")
@@ -14,7 +16,7 @@
 
 void usage(int status){
     if (status != EXIT_SUCCESS) {
-      emit_try_help ();
+      printf("");
     } else {
         printf (("\
             Usage: %s [FILE]\n\
