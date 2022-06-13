@@ -12,6 +12,22 @@
 #define TAMANHO_PALAVRA 30
 #define MI 1000000
 
+void usage(char opcao){
+    switch (opcao)
+    {
+       case 'v':
+         printf("Gerador de Índice remissivo v1.0");
+       break;
+    
+       case 'h':
+         printf("Usage: make-s ./main");
+       break;
+        
+       default:
+          printf("Voce selecionou uma opcao diferente -v e -h");
+    }
+}
+
 //Estruta com a palavra, a quantidade de vezes que apareceu e o ponteiro para a próxima palavra
 typedef struct typeword Palavra;
 
@@ -127,6 +143,6 @@ int main()
 {
     Palavra *lista;
     lista = LeitorArquivo("ArqTeste.txt");
-
+    
     return 0;
 }
